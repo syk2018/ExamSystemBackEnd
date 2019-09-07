@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  tomcat:
+    max-http-post-size: 50MB
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: true
+  datasource:
+    url: jdbc:mysql://syk2018.cn:3306/WebPublishingSystem?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
