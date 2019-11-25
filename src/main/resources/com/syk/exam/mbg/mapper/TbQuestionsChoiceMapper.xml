@@ -9,7 +9,7 @@
     <result column="optionB" jdbcType="VARCHAR" property="optionb" />
     <result column="optionC" jdbcType="VARCHAR" property="optionc" />
     <result column="optionD" jdbcType="VARCHAR" property="optiond" />
-    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="answer" jdbcType="CHAR" property="answer" />
     <result column="note" jdbcType="VARCHAR" property="note" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -112,7 +112,7 @@
       answer, note)
     values (#{typeid,jdbcType=BIGINT}, #{question,jdbcType=VARCHAR}, #{optiona,jdbcType=VARCHAR}, 
       #{optionb,jdbcType=VARCHAR}, #{optionc,jdbcType=VARCHAR}, #{optiond,jdbcType=VARCHAR}, 
-      #{answer,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
+      #{answer,jdbcType=CHAR}, #{note,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbQuestionsChoice">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
@@ -165,7 +165,7 @@
         #{optiond,jdbcType=VARCHAR},
       </if>
       <if test="answer != null">
-        #{answer,jdbcType=VARCHAR},
+        #{answer,jdbcType=CHAR},
       </if>
       <if test="note != null">
         #{note,jdbcType=VARCHAR},
@@ -203,7 +203,7 @@
         optionD = #{record.optiond,jdbcType=VARCHAR},
       </if>
       <if test="record.answer != null">
-        answer = #{record.answer,jdbcType=VARCHAR},
+        answer = #{record.answer,jdbcType=CHAR},
       </if>
       <if test="record.note != null">
         note = #{record.note,jdbcType=VARCHAR},
@@ -222,7 +222,7 @@
       optionB = #{record.optionb,jdbcType=VARCHAR},
       optionC = #{record.optionc,jdbcType=VARCHAR},
       optionD = #{record.optiond,jdbcType=VARCHAR},
-      answer = #{record.answer,jdbcType=VARCHAR},
+      answer = #{record.answer,jdbcType=CHAR},
       note = #{record.note,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -250,7 +250,7 @@
         optionD = #{optiond,jdbcType=VARCHAR},
       </if>
       <if test="answer != null">
-        answer = #{answer,jdbcType=VARCHAR},
+        answer = #{answer,jdbcType=CHAR},
       </if>
       <if test="note != null">
         note = #{note,jdbcType=VARCHAR},
@@ -266,7 +266,7 @@
       optionB = #{optionb,jdbcType=VARCHAR},
       optionC = #{optionc,jdbcType=VARCHAR},
       optionD = #{optiond,jdbcType=VARCHAR},
-      answer = #{answer,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=CHAR},
       note = #{note,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
