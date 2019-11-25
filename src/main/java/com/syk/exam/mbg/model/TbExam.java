@@ -2,13 +2,14 @@ package com.syk.exam.mbg.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.util.Date;
 
-public class TbExamid implements Serializable {
+public class TbExam implements Serializable {
     private Long id;
 
-    private String examtime;
+    private Date examtime;
 
-    private String stuid;
+    private Long stuid;
 
     private static final long serialVersionUID = 1L;
 
@@ -20,19 +21,19 @@ public class TbExamid implements Serializable {
         this.id = id;
     }
 
-    public String getExamtime() {
+    public Date getExamtime() {
         return examtime;
     }
 
-    public void setExamtime(String examtime) {
+    public void setExamtime(Date examtime) {
         this.examtime = examtime;
     }
 
-    public String getStuid() {
+    public Long getStuid() {
         return stuid;
     }
 
-    public void setStuid(String stuid) {
+    public void setStuid(Long stuid) {
         this.stuid = stuid;
     }
 

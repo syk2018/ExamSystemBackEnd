@@ -8,7 +8,9 @@ import java.util.List;
  * @Description:
  **/
 public class TbQuestions {
-    
+
+    private Long examId;
+
     private List<TbQuestionsChoice> questionsChoices;
 
     public List<TbQuestionsChoice> getQuestionsChoices() {
@@ -17,5 +19,13 @@ public class TbQuestions {
 
     public void setQuestionsChoices(List<TbQuestionsChoice> questionsChoices) {
         this.questionsChoices = questionsChoices;
+    }
+
+    public Long getExamId() {
+        return examId;
+    }
+
+    public void setExamId(Long examId) {
+        this.examId = examId;
     }
 }

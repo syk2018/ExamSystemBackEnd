@@ -1,16 +1,17 @@
 package com.syk.exam.mbg.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class TbExamidExample {
+public class TbExamExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TbExamidExample() {
+    public TbExamExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -174,62 +175,52 @@ public class TbExamidExample {
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeEqualTo(String value) {
+        public Criteria andExamtimeEqualTo(Date value) {
             addCriterion("ExamTime =", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeNotEqualTo(String value) {
+        public Criteria andExamtimeNotEqualTo(Date value) {
             addCriterion("ExamTime <>", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeGreaterThan(String value) {
+        public Criteria andExamtimeGreaterThan(Date value) {
             addCriterion("ExamTime >", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeGreaterThanOrEqualTo(String value) {
+        public Criteria andExamtimeGreaterThanOrEqualTo(Date value) {
             addCriterion("ExamTime >=", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeLessThan(String value) {
+        public Criteria andExamtimeLessThan(Date value) {
             addCriterion("ExamTime <", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeLessThanOrEqualTo(String value) {
+        public Criteria andExamtimeLessThanOrEqualTo(Date value) {
             addCriterion("ExamTime <=", value, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeLike(String value) {
-            addCriterion("ExamTime like", value, "examtime");
-            return (Criteria) this;
-        }
-
-        public Criteria andExamtimeNotLike(String value) {
-            addCriterion("ExamTime not like", value, "examtime");
-            return (Criteria) this;
-        }
-
-        public Criteria andExamtimeIn(List<String> values) {
+        public Criteria andExamtimeIn(List<Date> values) {
             addCriterion("ExamTime in", values, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeNotIn(List<String> values) {
+        public Criteria andExamtimeNotIn(List<Date> values) {
             addCriterion("ExamTime not in", values, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeBetween(String value1, String value2) {
+        public Criteria andExamtimeBetween(Date value1, Date value2) {
             addCriterion("ExamTime between", value1, value2, "examtime");
             return (Criteria) this;
         }
 
-        public Criteria andExamtimeNotBetween(String value1, String value2) {
+        public Criteria andExamtimeNotBetween(Date value1, Date value2) {
             addCriterion("ExamTime not between", value1, value2, "examtime");
             return (Criteria) this;
         }
@@ -244,62 +235,52 @@ public class TbExamidExample {
             return (Criteria) this;
         }
 
-        public Criteria andStuidEqualTo(String value) {
+        public Criteria andStuidEqualTo(Long value) {
             addCriterion("stuid =", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotEqualTo(String value) {
+        public Criteria andStuidNotEqualTo(Long value) {
             addCriterion("stuid <>", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThan(String value) {
+        public Criteria andStuidGreaterThan(Long value) {
             addCriterion("stuid >", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThanOrEqualTo(String value) {
+        public Criteria andStuidGreaterThanOrEqualTo(Long value) {
             addCriterion("stuid >=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThan(String value) {
+        public Criteria andStuidLessThan(Long value) {
             addCriterion("stuid <", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThanOrEqualTo(String value) {
+        public Criteria andStuidLessThanOrEqualTo(Long value) {
             addCriterion("stuid <=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLike(String value) {
-            addCriterion("stuid like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidNotLike(String value) {
-            addCriterion("stuid not like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidIn(List<String> values) {
+        public Criteria andStuidIn(List<Long> values) {
             addCriterion("stuid in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotIn(List<String> values) {
+        public Criteria andStuidNotIn(List<Long> values) {
             addCriterion("stuid not in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidBetween(String value1, String value2) {
+        public Criteria andStuidBetween(Long value1, Long value2) {
             addCriterion("stuid between", value1, value2, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotBetween(String value1, String value2) {
+        public Criteria andStuidNotBetween(Long value1, Long value2) {
             addCriterion("stuid not between", value1, value2, "stuid");
             return (Criteria) this;
         }

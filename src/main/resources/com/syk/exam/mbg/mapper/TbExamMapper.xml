@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.syk.exam.mbg.mapper.TbExamidMapper">
-  <resultMap id="BaseResultMap" type="com.syk.exam.mbg.model.TbExamid">
+<mapper namespace="com.syk.exam.mbg.mapper.TbExamMapper">
+  <resultMap id="BaseResultMap" type="com.syk.exam.mbg.model.TbExam">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="ExamTime" jdbcType="VARCHAR" property="examtime" />
-    <result column="stuid" jdbcType="VARCHAR" property="stuid" />
+    <result column="ExamTime" jdbcType="TIMESTAMP" property="examtime" />
+    <result column="stuid" jdbcType="BIGINT" property="stuid" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,13 +67,13 @@
   <sql id="Base_Column_List">
     id, ExamTime, stuid
   </sql>
-  <select id="selectByExample" parameterType="com.syk.exam.mbg.model.TbExamidExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.syk.exam.mbg.model.TbExamExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_examid
+    from tb_exam
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,31 +84,31 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from tb_examid
+    from tb_exam
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from tb_examid
+    delete from tb_exam
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.syk.exam.mbg.model.TbExamidExample">
-    delete from tb_examid
+  <delete id="deleteByExample" parameterType="com.syk.exam.mbg.model.TbExamExample">
+    delete from tb_exam
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.syk.exam.mbg.model.TbExamid">
+  <insert id="insert" parameterType="com.syk.exam.mbg.model.TbExam">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_examid (ExamTime, stuid)
-    values (#{examtime,jdbcType=VARCHAR}, #{stuid,jdbcType=VARCHAR})
+    insert into tb_exam (ExamTime, stuid)
+    values (#{examtime,jdbcType=TIMESTAMP}, #{stuid,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbExamid">
+  <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbExam">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_examid
+    insert into tb_exam
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="examtime != null">
         ExamTime,
@@ -119,30 +119,30 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="examtime != null">
-        #{examtime,jdbcType=VARCHAR},
+        #{examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="stuid != null">
-        #{stuid,jdbcType=VARCHAR},
+        #{stuid,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.syk.exam.mbg.model.TbExamidExample" resultType="java.lang.Long">
-    select count(*) from tb_examid
+  <select id="countByExample" parameterType="com.syk.exam.mbg.model.TbExamExample" resultType="java.lang.Long">
+    select count(*) from tb_exam
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update tb_examid
+    update tb_exam
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
       <if test="record.examtime != null">
-        ExamTime = #{record.examtime,jdbcType=VARCHAR},
+        ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.stuid != null">
-        stuid = #{record.stuid,jdbcType=VARCHAR},
+        stuid = #{record.stuid,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -150,30 +150,30 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update tb_examid
+    update tb_exam
     set id = #{record.id,jdbcType=BIGINT},
-      ExamTime = #{record.examtime,jdbcType=VARCHAR},
-      stuid = #{record.stuid,jdbcType=VARCHAR}
+      ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
+      stuid = #{record.stuid,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.syk.exam.mbg.model.TbExamid">
-    update tb_examid
+  <update id="updateByPrimaryKeySelective" parameterType="com.syk.exam.mbg.model.TbExam">
+    update tb_exam
     <set>
       <if test="examtime != null">
-        ExamTime = #{examtime,jdbcType=VARCHAR},
+        ExamTime = #{examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="stuid != null">
-        stuid = #{stuid,jdbcType=VARCHAR},
+        stuid = #{stuid,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.syk.exam.mbg.model.TbExamid">
-    update tb_examid
-    set ExamTime = #{examtime,jdbcType=VARCHAR},
-      stuid = #{stuid,jdbcType=VARCHAR}
+  <update id="updateByPrimaryKey" parameterType="com.syk.exam.mbg.model.TbExam">
+    update tb_exam
+    set ExamTime = #{examtime,jdbcType=TIMESTAMP},
+      stuid = #{stuid,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -1,16 +1,16 @@
 package com.syk.exam.service.impl;
 
+import com.syk.exam.mbg.mapper.TbExamMapper;
 import com.syk.exam.mbg.mapper.TbQuestionsChoiceMapper;
-import com.syk.exam.mbg.model.TbQuestions;
-import com.syk.exam.mbg.model.TbQuestionsChoice;
-import com.syk.exam.mbg.model.TbQuestionsChoiceExample;
-import com.syk.exam.mbg.model.TbType;
+import com.syk.exam.mbg.mapper.TbSturesultMapper;
+import com.syk.exam.mbg.model.*;
 import com.syk.exam.service.QuestionService;
 import com.syk.exam.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -23,13 +23,25 @@ import java.util.Random;
 public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
+    private TbExamMapper examMapper;
+
+    @Autowired
     private TbQuestionsChoiceMapper choiceMapper;
 
     @Autowired
     private TypeService typeService;
 
+    @Autowired
+    private TbSturesultMapper sturesultMapper;
+
     @Override
-    public TbQuestions getQuestions(String type, int choiceNum) {
+    public TbQuestions getQuestions(Long stuId, String type, int choiceNum) {
+
+        TbExam exam = new TbExam();
+
+        exam.setExamtime(new Date());
+
+        examMapper.insertSelective(exam);
 
         TbQuestions questions = new TbQuestions();
 
@@ -42,8 +54,36 @@ public class QuestionServiceImpl implements QuestionService {
         List<TbQuestionsChoice> result = this.random(choiceMapper.selectByExample(choiceExample),choiceNum);
 
         questions.setQuestionsChoices(result);
+        questions.setExamId(exam.getId());
 
         return questions;
+    }
+
+    @Override
+    public List<TbSturesult> submitQuestions(List<TbSturesult> sturesult) {
+
+        for(int i=0; i<sturesult.size(); i++) {
+            sturesultMapper.insertSelective(sturesult.get(i));
+        }
+
+        return sturesult;
+
+    }
+
+    @Override
+    public List<TbSturesult> getResultByExamId(Long examId) {
+        TbSturesultExample sturesultExample = new TbSturesultExample();
+        sturesultExample.createCriteria().andExamidEqualTo(examId);
+
+        return sturesultMapper.selectByExample(sturesultExample);
+    }
+
+    @Override
+    public List<TbExam> getExamByStuId(Long stuId) {
+        TbExamExample examExample = new TbExamExample();
+        examExample.createCriteria().andStuidEqualTo(stuId);
+
+        return examMapper.selectByExample(examExample);
     }
 
     @Override

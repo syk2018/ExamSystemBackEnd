@@ -9,11 +9,9 @@ public class TbSturesult implements Serializable {
 
     private String stuid;
 
-    private String whichlesson;
-
     private Date examtime;
 
-    private Integer examid;
+    private Long examid;
 
     private String quesid;
 
@@ -39,14 +37,6 @@ public class TbSturesult implements Serializable {
         this.stuid = stuid;
     }
 
-    public String getWhichlesson() {
-        return whichlesson;
-    }
-
-    public void setWhichlesson(String whichlesson) {
-        this.whichlesson = whichlesson;
-    }
-
     public Date getExamtime() {
         return examtime;
     }
@@ -55,11 +45,11 @@ public class TbSturesult implements Serializable {
         this.examtime = examtime;
     }
 
-    public Integer getExamid() {
+    public Long getExamid() {
         return examid;
     }
 
-    public void setExamid(Integer examid) {
+    public void setExamid(Long examid) {
         this.examid = examid;
     }
 
@@ -95,7 +85,6 @@ public class TbSturesult implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", stuid=").append(stuid);
-        sb.append(", whichlesson=").append(whichlesson);
         sb.append(", examtime=").append(examtime);
         sb.append(", examid=").append(examid);
         sb.append(", quesid=").append(quesid);

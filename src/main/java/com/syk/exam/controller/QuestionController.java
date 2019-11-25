@@ -29,21 +29,18 @@ public class QuestionController {
     @ApiOperation("Get Question")
     @RequestMapping(value = "getByType", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<TbQuestions> GetQuestionByType(@RequestParam("type") String type, @RequestParam("num") int num) {
-        return CommonResult.success(questionService.getQuestions(type, num));
+    public CommonResult<TbQuestions> GetQuestionByType(@RequestParam("stuId") Long stuId, @RequestParam("type") String type, @RequestParam("num") int num) {
+        return CommonResult.success(questionService.getQuestions(stuId, type, num));
     }
 
     @ApiOperation("Create Choice Question")
     @RequestMapping(value = "createChoice", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult createChoice(@RequestBody TbQuestionsChoice choice) {
-        int result = questionService.addChoice(choice);
 
-        System.out.println(result);
-        System.out.println(new Long((long)result));
+        questionService.addChoice(choice);
 
-        TbQuestionsChoice temp = questionService.getChoiceById(new Long((long)result));
-        return CommonResult.success(temp);
+        return CommonResult.success(choice,"success");
 
     }
 }

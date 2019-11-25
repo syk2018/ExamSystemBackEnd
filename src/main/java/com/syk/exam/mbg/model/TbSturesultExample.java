@@ -235,76 +235,6 @@ public class TbSturesultExample {
             return (Criteria) this;
         }
 
-        public Criteria andWhichlessonIsNull() {
-            addCriterion("whichLesson is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonIsNotNull() {
-            addCriterion("whichLesson is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonEqualTo(String value) {
-            addCriterion("whichLesson =", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonNotEqualTo(String value) {
-            addCriterion("whichLesson <>", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonGreaterThan(String value) {
-            addCriterion("whichLesson >", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonGreaterThanOrEqualTo(String value) {
-            addCriterion("whichLesson >=", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonLessThan(String value) {
-            addCriterion("whichLesson <", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonLessThanOrEqualTo(String value) {
-            addCriterion("whichLesson <=", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonLike(String value) {
-            addCriterion("whichLesson like", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonNotLike(String value) {
-            addCriterion("whichLesson not like", value, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonIn(List<String> values) {
-            addCriterion("whichLesson in", values, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonNotIn(List<String> values) {
-            addCriterion("whichLesson not in", values, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonBetween(String value1, String value2) {
-            addCriterion("whichLesson between", value1, value2, "whichlesson");
-            return (Criteria) this;
-        }
-
-        public Criteria andWhichlessonNotBetween(String value1, String value2) {
-            addCriterion("whichLesson not between", value1, value2, "whichlesson");
-            return (Criteria) this;
-        }
-
         public Criteria andExamtimeIsNull() {
             addCriterion("ExamTime is null");
             return (Criteria) this;
@@ -375,52 +305,52 @@ public class TbSturesultExample {
             return (Criteria) this;
         }
 
-        public Criteria andExamidEqualTo(Integer value) {
+        public Criteria andExamidEqualTo(Long value) {
             addCriterion("Examid =", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidNotEqualTo(Integer value) {
+        public Criteria andExamidNotEqualTo(Long value) {
             addCriterion("Examid <>", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidGreaterThan(Integer value) {
+        public Criteria andExamidGreaterThan(Long value) {
             addCriterion("Examid >", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidGreaterThanOrEqualTo(Integer value) {
+        public Criteria andExamidGreaterThanOrEqualTo(Long value) {
             addCriterion("Examid >=", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidLessThan(Integer value) {
+        public Criteria andExamidLessThan(Long value) {
             addCriterion("Examid <", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidLessThanOrEqualTo(Integer value) {
+        public Criteria andExamidLessThanOrEqualTo(Long value) {
             addCriterion("Examid <=", value, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidIn(List<Integer> values) {
+        public Criteria andExamidIn(List<Long> values) {
             addCriterion("Examid in", values, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidNotIn(List<Integer> values) {
+        public Criteria andExamidNotIn(List<Long> values) {
             addCriterion("Examid not in", values, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidBetween(Integer value1, Integer value2) {
+        public Criteria andExamidBetween(Long value1, Long value2) {
             addCriterion("Examid between", value1, value2, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andExamidNotBetween(Integer value1, Integer value2) {
+        public Criteria andExamidNotBetween(Long value1, Long value2) {
             addCriterion("Examid not between", value1, value2, "examid");
             return (Criteria) this;
         }

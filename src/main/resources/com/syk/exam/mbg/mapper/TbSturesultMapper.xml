@@ -4,9 +4,8 @@
   <resultMap id="BaseResultMap" type="com.syk.exam.mbg.model.TbSturesult">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="stuid" jdbcType="VARCHAR" property="stuid" />
-    <result column="whichLesson" jdbcType="VARCHAR" property="whichlesson" />
     <result column="ExamTime" jdbcType="TIMESTAMP" property="examtime" />
-    <result column="Examid" jdbcType="INTEGER" property="examid" />
+    <result column="Examid" jdbcType="BIGINT" property="examid" />
     <result column="quesid" jdbcType="VARCHAR" property="quesid" />
     <result column="answer" jdbcType="VARCHAR" property="answer" />
     <result column="resTotal" jdbcType="INTEGER" property="restotal" />
@@ -70,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, stuid, whichLesson, ExamTime, Examid, quesid, answer, resTotal
+    id, stuid, ExamTime, Examid, quesid, answer, resTotal
   </sql>
   <select id="selectByExample" parameterType="com.syk.exam.mbg.model.TbSturesultExample" resultMap="BaseResultMap">
     select
@@ -106,12 +105,12 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_sturesult (stuid, whichLesson, ExamTime, 
-      Examid, quesid, answer, 
-      resTotal)
-    values (#{stuid,jdbcType=VARCHAR}, #{whichlesson,jdbcType=VARCHAR}, #{examtime,jdbcType=TIMESTAMP}, 
-      #{examid,jdbcType=INTEGER}, #{quesid,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, 
-      #{restotal,jdbcType=INTEGER})
+    insert into tb_sturesult (stuid, ExamTime, Examid, 
+      quesid, answer, resTotal
+      )
+    values (#{stuid,jdbcType=VARCHAR}, #{examtime,jdbcType=TIMESTAMP}, #{examid,jdbcType=BIGINT}, 
+      #{quesid,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{restotal,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbSturesult">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
@@ -121,9 +120,6 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="stuid != null">
         stuid,
-      </if>
-      <if test="whichlesson != null">
-        whichLesson,
       </if>
       <if test="examtime != null">
         ExamTime,
@@ -145,14 +141,11 @@
       <if test="stuid != null">
         #{stuid,jdbcType=VARCHAR},
       </if>
-      <if test="whichlesson != null">
-        #{whichlesson,jdbcType=VARCHAR},
-      </if>
       <if test="examtime != null">
         #{examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="examid != null">
-        #{examid,jdbcType=INTEGER},
+        #{examid,jdbcType=BIGINT},
       </if>
       <if test="quesid != null">
         #{quesid,jdbcType=VARCHAR},
@@ -180,14 +173,11 @@
       <if test="record.stuid != null">
         stuid = #{record.stuid,jdbcType=VARCHAR},
       </if>
-      <if test="record.whichlesson != null">
-        whichLesson = #{record.whichlesson,jdbcType=VARCHAR},
-      </if>
       <if test="record.examtime != null">
         ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.examid != null">
-        Examid = #{record.examid,jdbcType=INTEGER},
+        Examid = #{record.examid,jdbcType=BIGINT},
       </if>
       <if test="record.quesid != null">
         quesid = #{record.quesid,jdbcType=VARCHAR},
@@ -207,9 +197,8 @@
     update tb_sturesult
     set id = #{record.id,jdbcType=BIGINT},
       stuid = #{record.stuid,jdbcType=VARCHAR},
-      whichLesson = #{record.whichlesson,jdbcType=VARCHAR},
       ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
-      Examid = #{record.examid,jdbcType=INTEGER},
+      Examid = #{record.examid,jdbcType=BIGINT},
       quesid = #{record.quesid,jdbcType=VARCHAR},
       answer = #{record.answer,jdbcType=VARCHAR},
       resTotal = #{record.restotal,jdbcType=INTEGER}
@@ -223,14 +212,11 @@
       <if test="stuid != null">
         stuid = #{stuid,jdbcType=VARCHAR},
       </if>
-      <if test="whichlesson != null">
-        whichLesson = #{whichlesson,jdbcType=VARCHAR},
-      </if>
       <if test="examtime != null">
         ExamTime = #{examtime,jdbcType=TIMESTAMP},
       </if>
       <if test="examid != null">
-        Examid = #{examid,jdbcType=INTEGER},
+        Examid = #{examid,jdbcType=BIGINT},
       </if>
       <if test="quesid != null">
         quesid = #{quesid,jdbcType=VARCHAR},
@@ -247,9 +233,8 @@
   <update id="updateByPrimaryKey" parameterType="com.syk.exam.mbg.model.TbSturesult">
     update tb_sturesult
     set stuid = #{stuid,jdbcType=VARCHAR},
-      whichLesson = #{whichlesson,jdbcType=VARCHAR},
       ExamTime = #{examtime,jdbcType=TIMESTAMP},
-      Examid = #{examid,jdbcType=INTEGER},
+      Examid = #{examid,jdbcType=BIGINT},
       quesid = #{quesid,jdbcType=VARCHAR},
       answer = #{answer,jdbcType=VARCHAR},
       resTotal = #{restotal,jdbcType=INTEGER}
