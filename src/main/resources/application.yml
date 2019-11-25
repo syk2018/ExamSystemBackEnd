@@ -10,7 +10,7 @@ spring:
       max-request-size: 50MB
       enabled: true
   datasource:
-    url: jdbc:mysql://syk2018.cn:3306/WebPublishingSystem?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://syk2018.cn:3306/db_exam?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: root
 mybatis:
