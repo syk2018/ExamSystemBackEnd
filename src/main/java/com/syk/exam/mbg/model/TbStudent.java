@@ -11,8 +11,6 @@ public class TbStudent implements Serializable {
 
     private String pwd;
 
-    private String sex;
-
     private Date jointime;
 
     private String profession;
@@ -43,14 +41,6 @@ public class TbStudent implements Serializable {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
     }
 
     public Date getJointime() {
@@ -86,7 +76,6 @@ public class TbStudent implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
         sb.append(", pwd=").append(pwd);
-        sb.append(", sex=").append(sex);
         sb.append(", jointime=").append(jointime);
         sb.append(", profession=").append(profession);
         sb.append(", cardno=").append(cardno);

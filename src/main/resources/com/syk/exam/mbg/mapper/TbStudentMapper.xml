@@ -5,7 +5,6 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pwd" jdbcType="VARCHAR" property="pwd" />
-    <result column="sex" jdbcType="CHAR" property="sex" />
     <result column="joinTime" jdbcType="TIMESTAMP" property="jointime" />
     <result column="profession" jdbcType="VARCHAR" property="profession" />
     <result column="cardNo" jdbcType="BIGINT" property="cardno" />
@@ -69,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, pwd, sex, joinTime, profession, cardNo
+    id, name, pwd, joinTime, profession, cardNo
   </sql>
   <select id="selectByExample" parameterType="com.syk.exam.mbg.model.TbStudentExample" resultMap="BaseResultMap">
     select
@@ -105,12 +104,10 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_student (name, pwd, sex, 
-      joinTime, profession, cardNo
-      )
-    values (#{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
-      #{jointime,jdbcType=TIMESTAMP}, #{profession,jdbcType=VARCHAR}, #{cardno,jdbcType=BIGINT}
-      )
+    insert into tb_student (name, pwd, joinTime, 
+      profession, cardNo)
+    values (#{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{jointime,jdbcType=TIMESTAMP}, 
+      #{profession,jdbcType=VARCHAR}, #{cardno,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbStudent">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
@@ -123,9 +120,6 @@
       </if>
       <if test="pwd != null">
         pwd,
-      </if>
-      <if test="sex != null">
-        sex,
       </if>
       <if test="jointime != null">
         joinTime,
@@ -143,9 +137,6 @@
       </if>
       <if test="pwd != null">
         #{pwd,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        #{sex,jdbcType=CHAR},
       </if>
       <if test="jointime != null">
         #{jointime,jdbcType=TIMESTAMP},
@@ -176,9 +167,6 @@
       <if test="record.pwd != null">
         pwd = #{record.pwd,jdbcType=VARCHAR},
       </if>
-      <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=CHAR},
-      </if>
       <if test="record.jointime != null">
         joinTime = #{record.jointime,jdbcType=TIMESTAMP},
       </if>
@@ -198,7 +186,6 @@
     set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
       pwd = #{record.pwd,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=CHAR},
       joinTime = #{record.jointime,jdbcType=TIMESTAMP},
       profession = #{record.profession,jdbcType=VARCHAR},
       cardNo = #{record.cardno,jdbcType=BIGINT}
@@ -214,9 +201,6 @@
       </if>
       <if test="pwd != null">
         pwd = #{pwd,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=CHAR},
       </if>
       <if test="jointime != null">
         joinTime = #{jointime,jdbcType=TIMESTAMP},
@@ -234,7 +218,6 @@
     update tb_student
     set name = #{name,jdbcType=VARCHAR},
       pwd = #{pwd,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=CHAR},
       joinTime = #{jointime,jdbcType=TIMESTAMP},
       profession = #{profession,jdbcType=VARCHAR},
       cardNo = #{cardno,jdbcType=BIGINT}
