@@ -284,6 +284,66 @@ public class TbExamExample {
             addCriterion("stuid not between", value1, value2, "stuid");
             return (Criteria) this;
         }
+
+        public Criteria andHassubmitIsNull() {
+            addCriterion("hasSubmit is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitIsNotNull() {
+            addCriterion("hasSubmit is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitEqualTo(Boolean value) {
+            addCriterion("hasSubmit =", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitNotEqualTo(Boolean value) {
+            addCriterion("hasSubmit <>", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitGreaterThan(Boolean value) {
+            addCriterion("hasSubmit >", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("hasSubmit >=", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitLessThan(Boolean value) {
+            addCriterion("hasSubmit <", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitLessThanOrEqualTo(Boolean value) {
+            addCriterion("hasSubmit <=", value, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitIn(List<Boolean> values) {
+            addCriterion("hasSubmit in", values, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitNotIn(List<Boolean> values) {
+            addCriterion("hasSubmit not in", values, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitBetween(Boolean value1, Boolean value2) {
+            addCriterion("hasSubmit between", value1, value2, "hassubmit");
+            return (Criteria) this;
+        }
+
+        public Criteria andHassubmitNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("hasSubmit not between", value1, value2, "hassubmit");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

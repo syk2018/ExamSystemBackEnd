@@ -21,7 +21,7 @@ import java.util.List;
  **/
 @Api(tags = "QuestionController", description = "Question information api")
 @Controller
-@RequestMapping(value = "/rep/question")
+@RequestMapping(value = "web/rep/question")
 public class QuestionController {
     @Autowired
     private QuestionService questionService;
@@ -53,6 +53,13 @@ public class QuestionController {
     public CommonResult submit(@RequestBody List<TbSturesult> sturesult) {
 
         return CommonResult.success(questionService.submitQuestions(sturesult));
+    }
+
+    @ApiOperation("Get Choice By id")
+    @RequestMapping(value = "getChoiceById", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult getChoiceById(@RequestBody List<Long> id) {
+        return CommonResult.success(questionService.getChoiceById(id));
     }
 
     @ApiOperation("Create Choice Question")

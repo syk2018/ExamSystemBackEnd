@@ -13,7 +13,7 @@ public class TbSturesult implements Serializable {
 
     private Long examid;
 
-    private Long quesid;
+    private Long questionid;
 
     private String answer;
 
@@ -53,12 +53,12 @@ public class TbSturesult implements Serializable {
         this.examid = examid;
     }
 
-    public Long getQuesid() {
-        return quesid;
+    public Long getQuestionid() {
+        return questionid;
     }
 
-    public void setQuesid(Long quesid) {
-        this.quesid = quesid;
+    public void setQuestionid(Long questionid) {
+        this.questionid = questionid;
     }
 
     public String getAnswer() {
@@ -87,7 +87,7 @@ public class TbSturesult implements Serializable {
         sb.append(", stuid=").append(stuid);
         sb.append(", examtime=").append(examtime);
         sb.append(", examid=").append(examid);
-        sb.append(", quesid=").append(quesid);
+        sb.append(", questionid=").append(questionid);
         sb.append(", answer=").append(answer);
         sb.append(", restotal=").append(restotal);
         sb.append(", serialVersionUID=").append(serialVersionUID);

@@ -18,7 +18,7 @@ import java.util.List;
 
 @Api(tags = "UsersController", description = "Users information api")
 @Controller
-@RequestMapping(value = "/rep/users")
+@RequestMapping(value = "web/rep/users")
 public class UserController {
     @Autowired
     private UserService userService;

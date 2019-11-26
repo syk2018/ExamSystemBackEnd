@@ -11,6 +11,8 @@ public class TbExam implements Serializable {
 
     private Long stuid;
 
+    private Boolean hassubmit;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -37,6 +39,14 @@ public class TbExam implements Serializable {
         this.stuid = stuid;
     }
 
+    public Boolean getHassubmit() {
+        return hassubmit;
+    }
+
+    public void setHassubmit(Boolean hassubmit) {
+        this.hassubmit = hassubmit;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -46,6 +56,7 @@ public class TbExam implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", examtime=").append(examtime);
         sb.append(", stuid=").append(stuid);
+        sb.append(", hassubmit=").append(hassubmit);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

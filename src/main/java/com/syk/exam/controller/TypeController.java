@@ -17,7 +17,7 @@ import java.util.List;
 
 @Api(tags = "TypeController", description = "Type information api")
 @Controller
-@RequestMapping(value = "/rep/Type")
+@RequestMapping(value = "web/rep/Type")
 public class TypeController {
     @Autowired
     private TypeService typeService;

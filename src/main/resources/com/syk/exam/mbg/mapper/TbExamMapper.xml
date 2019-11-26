@@ -5,6 +5,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="ExamTime" jdbcType="TIMESTAMP" property="examtime" />
     <result column="stuid" jdbcType="BIGINT" property="stuid" />
+    <result column="hasSubmit" jdbcType="BIT" property="hassubmit" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, ExamTime, stuid
+    id, ExamTime, stuid, hasSubmit
   </sql>
   <select id="selectByExample" parameterType="com.syk.exam.mbg.model.TbExamExample" resultMap="BaseResultMap">
     select
@@ -101,8 +102,10 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_exam (ExamTime, stuid)
-    values (#{examtime,jdbcType=TIMESTAMP}, #{stuid,jdbcType=BIGINT})
+    insert into tb_exam (ExamTime, stuid, hasSubmit
+      )
+    values (#{examtime,jdbcType=TIMESTAMP}, #{stuid,jdbcType=BIGINT}, #{hassubmit,jdbcType=BIT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbExam">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
@@ -116,6 +119,9 @@
       <if test="stuid != null">
         stuid,
       </if>
+      <if test="hassubmit != null">
+        hasSubmit,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="examtime != null">
@@ -123,6 +129,9 @@
       </if>
       <if test="stuid != null">
         #{stuid,jdbcType=BIGINT},
+      </if>
+      <if test="hassubmit != null">
+        #{hassubmit,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -144,6 +153,9 @@
       <if test="record.stuid != null">
         stuid = #{record.stuid,jdbcType=BIGINT},
       </if>
+      <if test="record.hassubmit != null">
+        hasSubmit = #{record.hassubmit,jdbcType=BIT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -153,7 +165,8 @@
     update tb_exam
     set id = #{record.id,jdbcType=BIGINT},
       ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
-      stuid = #{record.stuid,jdbcType=BIGINT}
+      stuid = #{record.stuid,jdbcType=BIGINT},
+      hasSubmit = #{record.hassubmit,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -167,13 +180,17 @@
       <if test="stuid != null">
         stuid = #{stuid,jdbcType=BIGINT},
       </if>
+      <if test="hassubmit != null">
+        hasSubmit = #{hassubmit,jdbcType=BIT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.syk.exam.mbg.model.TbExam">
     update tb_exam
     set ExamTime = #{examtime,jdbcType=TIMESTAMP},
-      stuid = #{stuid,jdbcType=BIGINT}
+      stuid = #{stuid,jdbcType=BIGINT},
+      hasSubmit = #{hassubmit,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

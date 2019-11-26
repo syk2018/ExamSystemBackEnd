@@ -63,6 +63,14 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public List<TbSturesult> submitQuestions(List<TbSturesult> sturesult) {
 
+        Long id = sturesult.get(0).getExamid();
+
+        TbExam exam = this.examMapper.selectByPrimaryKey(id);
+
+        exam.setHassubmit(true);
+
+        this.examMapper.updateByPrimaryKey(exam);
+
         for(int i=0; i<sturesult.size(); i++) {
             sturesultMapper.insertSelective(sturesult.get(i));
         }
@@ -82,7 +90,8 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public List<TbExam> getExamByStuId(Long stuId) {
         TbExamExample examExample = new TbExamExample();
-        examExample.createCriteria().andStuidEqualTo(stuId);
+        examExample.setOrderByClause("ExamTime DESC");
+        examExample.createCriteria().andStuidEqualTo(stuId).andHassubmitEqualTo(true);
 
         return examMapper.selectByExample(examExample);
     }
@@ -93,8 +102,13 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public TbQuestionsChoice getChoiceById(Long id) {
-        return choiceMapper.selectByPrimaryKey(id);
+    public List<TbQuestionsChoice> getChoiceById(List<Long> id) {
+        List<TbQuestionsChoice> result = new ArrayList<>();
+
+        for(int i=0; i<id.size(); i++) {
+            result.add(choiceMapper.selectByPrimaryKey(id.get(i)));
+        }
+        return result;
     }
 
     @Override

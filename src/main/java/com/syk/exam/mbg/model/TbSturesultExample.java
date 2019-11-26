@@ -166,242 +166,242 @@ public class TbSturesultExample {
         }
 
         public Criteria andStuidIsNull() {
-            addCriterion("stuid is null");
+            addCriterion("stuId is null");
             return (Criteria) this;
         }
 
         public Criteria andStuidIsNotNull() {
-            addCriterion("stuid is not null");
+            addCriterion("stuId is not null");
             return (Criteria) this;
         }
 
         public Criteria andStuidEqualTo(Long value) {
-            addCriterion("stuid =", value, "stuid");
+            addCriterion("stuId =", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidNotEqualTo(Long value) {
-            addCriterion("stuid <>", value, "stuid");
+            addCriterion("stuId <>", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidGreaterThan(Long value) {
-            addCriterion("stuid >", value, "stuid");
+            addCriterion("stuId >", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidGreaterThanOrEqualTo(Long value) {
-            addCriterion("stuid >=", value, "stuid");
+            addCriterion("stuId >=", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidLessThan(Long value) {
-            addCriterion("stuid <", value, "stuid");
+            addCriterion("stuId <", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidLessThanOrEqualTo(Long value) {
-            addCriterion("stuid <=", value, "stuid");
+            addCriterion("stuId <=", value, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidIn(List<Long> values) {
-            addCriterion("stuid in", values, "stuid");
+            addCriterion("stuId in", values, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidNotIn(List<Long> values) {
-            addCriterion("stuid not in", values, "stuid");
+            addCriterion("stuId not in", values, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidBetween(Long value1, Long value2) {
-            addCriterion("stuid between", value1, value2, "stuid");
+            addCriterion("stuId between", value1, value2, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andStuidNotBetween(Long value1, Long value2) {
-            addCriterion("stuid not between", value1, value2, "stuid");
+            addCriterion("stuId not between", value1, value2, "stuid");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeIsNull() {
-            addCriterion("ExamTime is null");
+            addCriterion("examTime is null");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeIsNotNull() {
-            addCriterion("ExamTime is not null");
+            addCriterion("examTime is not null");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeEqualTo(Date value) {
-            addCriterion("ExamTime =", value, "examtime");
+            addCriterion("examTime =", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeNotEqualTo(Date value) {
-            addCriterion("ExamTime <>", value, "examtime");
+            addCriterion("examTime <>", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeGreaterThan(Date value) {
-            addCriterion("ExamTime >", value, "examtime");
+            addCriterion("examTime >", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("ExamTime >=", value, "examtime");
+            addCriterion("examTime >=", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeLessThan(Date value) {
-            addCriterion("ExamTime <", value, "examtime");
+            addCriterion("examTime <", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeLessThanOrEqualTo(Date value) {
-            addCriterion("ExamTime <=", value, "examtime");
+            addCriterion("examTime <=", value, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeIn(List<Date> values) {
-            addCriterion("ExamTime in", values, "examtime");
+            addCriterion("examTime in", values, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeNotIn(List<Date> values) {
-            addCriterion("ExamTime not in", values, "examtime");
+            addCriterion("examTime not in", values, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeBetween(Date value1, Date value2) {
-            addCriterion("ExamTime between", value1, value2, "examtime");
+            addCriterion("examTime between", value1, value2, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamtimeNotBetween(Date value1, Date value2) {
-            addCriterion("ExamTime not between", value1, value2, "examtime");
+            addCriterion("examTime not between", value1, value2, "examtime");
             return (Criteria) this;
         }
 
         public Criteria andExamidIsNull() {
-            addCriterion("Examid is null");
+            addCriterion("examId is null");
             return (Criteria) this;
         }
 
         public Criteria andExamidIsNotNull() {
-            addCriterion("Examid is not null");
+            addCriterion("examId is not null");
             return (Criteria) this;
         }
 
         public Criteria andExamidEqualTo(Long value) {
-            addCriterion("Examid =", value, "examid");
+            addCriterion("examId =", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidNotEqualTo(Long value) {
-            addCriterion("Examid <>", value, "examid");
+            addCriterion("examId <>", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidGreaterThan(Long value) {
-            addCriterion("Examid >", value, "examid");
+            addCriterion("examId >", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidGreaterThanOrEqualTo(Long value) {
-            addCriterion("Examid >=", value, "examid");
+            addCriterion("examId >=", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidLessThan(Long value) {
-            addCriterion("Examid <", value, "examid");
+            addCriterion("examId <", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidLessThanOrEqualTo(Long value) {
-            addCriterion("Examid <=", value, "examid");
+            addCriterion("examId <=", value, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidIn(List<Long> values) {
-            addCriterion("Examid in", values, "examid");
+            addCriterion("examId in", values, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidNotIn(List<Long> values) {
-            addCriterion("Examid not in", values, "examid");
+            addCriterion("examId not in", values, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidBetween(Long value1, Long value2) {
-            addCriterion("Examid between", value1, value2, "examid");
+            addCriterion("examId between", value1, value2, "examid");
             return (Criteria) this;
         }
 
         public Criteria andExamidNotBetween(Long value1, Long value2) {
-            addCriterion("Examid not between", value1, value2, "examid");
+            addCriterion("examId not between", value1, value2, "examid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidIsNull() {
-            addCriterion("quesid is null");
+        public Criteria andQuestionidIsNull() {
+            addCriterion("questionId is null");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidIsNotNull() {
-            addCriterion("quesid is not null");
+        public Criteria andQuestionidIsNotNull() {
+            addCriterion("questionId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidEqualTo(Long value) {
-            addCriterion("quesid =", value, "quesid");
+        public Criteria andQuestionidEqualTo(Long value) {
+            addCriterion("questionId =", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotEqualTo(Long value) {
-            addCriterion("quesid <>", value, "quesid");
+        public Criteria andQuestionidNotEqualTo(Long value) {
+            addCriterion("questionId <>", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidGreaterThan(Long value) {
-            addCriterion("quesid >", value, "quesid");
+        public Criteria andQuestionidGreaterThan(Long value) {
+            addCriterion("questionId >", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidGreaterThanOrEqualTo(Long value) {
-            addCriterion("quesid >=", value, "quesid");
+        public Criteria andQuestionidGreaterThanOrEqualTo(Long value) {
+            addCriterion("questionId >=", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidLessThan(Long value) {
-            addCriterion("quesid <", value, "quesid");
+        public Criteria andQuestionidLessThan(Long value) {
+            addCriterion("questionId <", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidLessThanOrEqualTo(Long value) {
-            addCriterion("quesid <=", value, "quesid");
+        public Criteria andQuestionidLessThanOrEqualTo(Long value) {
+            addCriterion("questionId <=", value, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidIn(List<Long> values) {
-            addCriterion("quesid in", values, "quesid");
+        public Criteria andQuestionidIn(List<Long> values) {
+            addCriterion("questionId in", values, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotIn(List<Long> values) {
-            addCriterion("quesid not in", values, "quesid");
+        public Criteria andQuestionidNotIn(List<Long> values) {
+            addCriterion("questionId not in", values, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidBetween(Long value1, Long value2) {
-            addCriterion("quesid between", value1, value2, "quesid");
+        public Criteria andQuestionidBetween(Long value1, Long value2) {
+            addCriterion("questionId between", value1, value2, "questionid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotBetween(Long value1, Long value2) {
-            addCriterion("quesid not between", value1, value2, "quesid");
+        public Criteria andQuestionidNotBetween(Long value1, Long value2) {
+            addCriterion("questionId not between", value1, value2, "questionid");
             return (Criteria) this;
         }
 

@@ -19,7 +19,7 @@ public interface QuestionService {
 
     int addChoice(TbQuestionsChoice choice);
 
-    TbQuestionsChoice getChoiceById(Long id);
+    List<TbQuestionsChoice> getChoiceById(List<Long> id);
 
     int deleteChoice(Long id);
 }
