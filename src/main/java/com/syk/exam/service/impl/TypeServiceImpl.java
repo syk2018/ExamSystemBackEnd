@@ -48,4 +48,10 @@ public class TypeServiceImpl implements TypeService {
         result = typeMapper.selectByExample(typeExample);
         return result;
     }
+
+    @Override
+    public TbType getTypeById(Long id) {
+
+        return typeMapper.selectByPrimaryKey(id);
+    }
 }

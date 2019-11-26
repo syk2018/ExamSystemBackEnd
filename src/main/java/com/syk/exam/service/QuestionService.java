@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface QuestionService {
 
-    TbQuestions getQuestions(Long stuId, String type, int choiceNum);
+    TbQuestions getQuestions(Long stuId, Long typeId, int choiceNum);
 
     List<TbSturesult> submitQuestions(List<TbSturesult> sturesult);
 

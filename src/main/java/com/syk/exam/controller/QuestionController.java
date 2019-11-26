@@ -29,8 +29,8 @@ public class QuestionController {
     @ApiOperation("Get Question")
     @RequestMapping(value = "getQuestionByType", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<TbQuestions> GetQuestionByType(@RequestParam("stuId") Long stuId, @RequestParam("type") String type, @RequestParam("num") int num) {
-        return CommonResult.success(questionService.getQuestions(stuId, type, num));
+    public CommonResult<TbQuestions> GetQuestionByType(@RequestParam("stuId") Long stuId, @RequestParam("typeId") Long typeId, @RequestParam("num") int num) {
+        return CommonResult.success(questionService.getQuestions(stuId, typeId, num));
     }
 
     @ApiOperation("Get Exam by student id")

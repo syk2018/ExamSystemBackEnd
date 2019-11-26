@@ -14,4 +14,6 @@ public interface TypeService {
     List<TbType> getAllType();
 
     List<TbType> getTypeByName(String name);
+
+    TbType getTypeById(Long id);
 }

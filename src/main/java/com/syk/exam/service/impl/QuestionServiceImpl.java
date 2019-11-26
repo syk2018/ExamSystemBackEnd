@@ -35,7 +35,7 @@ public class QuestionServiceImpl implements QuestionService {
     private TbSturesultMapper sturesultMapper;
 
     @Override
-    public TbQuestions getQuestions(Long stuId, String type, int choiceNum) {
+    public TbQuestions getQuestions(Long stuId, Long typeId, int choiceNum) {
 
         TbExam exam = new TbExam();
 
@@ -46,11 +46,11 @@ public class QuestionServiceImpl implements QuestionService {
 
         TbQuestions questions = new TbQuestions();
 
-        List<TbType> selectType = typeService.getTypeByName(type);
+        TbType selectType = typeService.getTypeById(typeId);
 
         TbQuestionsChoiceExample choiceExample = new TbQuestionsChoiceExample();
 
-        choiceExample.createCriteria().andTypeidEqualTo(selectType.get(0).getId());
+        choiceExample.createCriteria().andTypeidEqualTo(selectType.getId());
 
         List<TbQuestionsChoice> result = this.random(choiceMapper.selectByExample(choiceExample),choiceNum);
 
