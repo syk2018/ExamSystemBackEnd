@@ -46,7 +46,7 @@ public class UserController {
             return CommonResult.duplicate("Duplicate username.");
         }
         else {
-            List<TbStudent> temp = userService.getUserByUsername(user);
+            List<TbStudent> temp = userService.getUserByCardId(user);
             return CommonResult.success(temp);
         }
     }

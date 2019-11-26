@@ -7,13 +7,13 @@ import java.util.Date;
 public class TbSturesult implements Serializable {
     private Long id;
 
-    private String stuid;
+    private Long stuid;
 
     private Date examtime;
 
     private Long examid;
 
-    private String quesid;
+    private Long quesid;
 
     private String answer;
 
@@ -29,11 +29,11 @@ public class TbSturesult implements Serializable {
         this.id = id;
     }
 
-    public String getStuid() {
+    public Long getStuid() {
         return stuid;
     }
 
-    public void setStuid(String stuid) {
+    public void setStuid(Long stuid) {
         this.stuid = stuid;
     }
 
@@ -53,11 +53,11 @@ public class TbSturesult implements Serializable {
         this.examid = examid;
     }
 
-    public String getQuesid() {
+    public Long getQuesid() {
         return quesid;
     }
 
-    public void setQuesid(String quesid) {
+    public void setQuesid(Long quesid) {
         this.quesid = quesid;
     }
 

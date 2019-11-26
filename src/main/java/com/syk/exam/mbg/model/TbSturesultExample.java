@@ -175,62 +175,52 @@ public class TbSturesultExample {
             return (Criteria) this;
         }
 
-        public Criteria andStuidEqualTo(String value) {
+        public Criteria andStuidEqualTo(Long value) {
             addCriterion("stuid =", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotEqualTo(String value) {
+        public Criteria andStuidNotEqualTo(Long value) {
             addCriterion("stuid <>", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThan(String value) {
+        public Criteria andStuidGreaterThan(Long value) {
             addCriterion("stuid >", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThanOrEqualTo(String value) {
+        public Criteria andStuidGreaterThanOrEqualTo(Long value) {
             addCriterion("stuid >=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThan(String value) {
+        public Criteria andStuidLessThan(Long value) {
             addCriterion("stuid <", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThanOrEqualTo(String value) {
+        public Criteria andStuidLessThanOrEqualTo(Long value) {
             addCriterion("stuid <=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLike(String value) {
-            addCriterion("stuid like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidNotLike(String value) {
-            addCriterion("stuid not like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidIn(List<String> values) {
+        public Criteria andStuidIn(List<Long> values) {
             addCriterion("stuid in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotIn(List<String> values) {
+        public Criteria andStuidNotIn(List<Long> values) {
             addCriterion("stuid not in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidBetween(String value1, String value2) {
+        public Criteria andStuidBetween(Long value1, Long value2) {
             addCriterion("stuid between", value1, value2, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotBetween(String value1, String value2) {
+        public Criteria andStuidNotBetween(Long value1, Long value2) {
             addCriterion("stuid not between", value1, value2, "stuid");
             return (Criteria) this;
         }
@@ -365,62 +355,52 @@ public class TbSturesultExample {
             return (Criteria) this;
         }
 
-        public Criteria andQuesidEqualTo(String value) {
+        public Criteria andQuesidEqualTo(Long value) {
             addCriterion("quesid =", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotEqualTo(String value) {
+        public Criteria andQuesidNotEqualTo(Long value) {
             addCriterion("quesid <>", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidGreaterThan(String value) {
+        public Criteria andQuesidGreaterThan(Long value) {
             addCriterion("quesid >", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidGreaterThanOrEqualTo(String value) {
+        public Criteria andQuesidGreaterThanOrEqualTo(Long value) {
             addCriterion("quesid >=", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidLessThan(String value) {
+        public Criteria andQuesidLessThan(Long value) {
             addCriterion("quesid <", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidLessThanOrEqualTo(String value) {
+        public Criteria andQuesidLessThanOrEqualTo(Long value) {
             addCriterion("quesid <=", value, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidLike(String value) {
-            addCriterion("quesid like", value, "quesid");
-            return (Criteria) this;
-        }
-
-        public Criteria andQuesidNotLike(String value) {
-            addCriterion("quesid not like", value, "quesid");
-            return (Criteria) this;
-        }
-
-        public Criteria andQuesidIn(List<String> values) {
+        public Criteria andQuesidIn(List<Long> values) {
             addCriterion("quesid in", values, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotIn(List<String> values) {
+        public Criteria andQuesidNotIn(List<Long> values) {
             addCriterion("quesid not in", values, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidBetween(String value1, String value2) {
+        public Criteria andQuesidBetween(Long value1, Long value2) {
             addCriterion("quesid between", value1, value2, "quesid");
             return (Criteria) this;
         }
 
-        public Criteria andQuesidNotBetween(String value1, String value2) {
+        public Criteria andQuesidNotBetween(Long value1, Long value2) {
             addCriterion("quesid not between", value1, value2, "quesid");
             return (Criteria) this;
         }

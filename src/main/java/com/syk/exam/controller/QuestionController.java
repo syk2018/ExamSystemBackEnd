@@ -4,7 +4,7 @@ import com.syk.exam.common.api.CommonResult;
 import com.syk.exam.common.api.ResultCode;
 import com.syk.exam.mbg.model.TbQuestions;
 import com.syk.exam.mbg.model.TbQuestionsChoice;
-import com.syk.exam.mbg.model.TbType;
+import com.syk.exam.mbg.model.TbSturesult;
 import com.syk.exam.service.QuestionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -27,10 +27,32 @@ public class QuestionController {
     private QuestionService questionService;
 
     @ApiOperation("Get Question")
-    @RequestMapping(value = "getByType", method = RequestMethod.GET)
+    @RequestMapping(value = "getQuestionByType", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<TbQuestions> GetQuestionByType(@RequestParam("stuId") Long stuId, @RequestParam("type") String type, @RequestParam("num") int num) {
         return CommonResult.success(questionService.getQuestions(stuId, type, num));
+    }
+
+    @ApiOperation("Get Exam by student id")
+    @RequestMapping(value = "getExamById", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getExamById(@RequestParam("stuId") Long id) {
+        return CommonResult.success(questionService.getExamByStuId(id));
+    }
+
+    @ApiOperation("Get Result by exam id")
+    @RequestMapping(value = "getResultById", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getResultById(@RequestParam("examId") Long id) {
+        return CommonResult.success(questionService.getResultByExamId(id));
+    }
+
+    @ApiOperation("Submit Result")
+    @RequestMapping(value = "submit", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult submit(@RequestBody List<TbSturesult> sturesult) {
+
+        return CommonResult.success(questionService.submitQuestions(sturesult));
     }
 
     @ApiOperation("Create Choice Question")

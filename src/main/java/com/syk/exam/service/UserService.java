@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    List<TbStudent> getUserByUsername(TbStudent student);
+    List<TbStudent> getUserByCardId(TbStudent student);
 
     TbStudent getUserById(Long id);
 

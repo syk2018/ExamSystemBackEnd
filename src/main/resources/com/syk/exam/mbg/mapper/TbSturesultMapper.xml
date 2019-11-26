@@ -3,10 +3,10 @@
 <mapper namespace="com.syk.exam.mbg.mapper.TbSturesultMapper">
   <resultMap id="BaseResultMap" type="com.syk.exam.mbg.model.TbSturesult">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="stuid" jdbcType="VARCHAR" property="stuid" />
+    <result column="stuid" jdbcType="BIGINT" property="stuid" />
     <result column="ExamTime" jdbcType="TIMESTAMP" property="examtime" />
     <result column="Examid" jdbcType="BIGINT" property="examid" />
-    <result column="quesid" jdbcType="VARCHAR" property="quesid" />
+    <result column="quesid" jdbcType="BIGINT" property="quesid" />
     <result column="answer" jdbcType="VARCHAR" property="answer" />
     <result column="resTotal" jdbcType="INTEGER" property="restotal" />
   </resultMap>
@@ -108,8 +108,8 @@
     insert into tb_sturesult (stuid, ExamTime, Examid, 
       quesid, answer, resTotal
       )
-    values (#{stuid,jdbcType=VARCHAR}, #{examtime,jdbcType=TIMESTAMP}, #{examid,jdbcType=BIGINT}, 
-      #{quesid,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{restotal,jdbcType=INTEGER}
+    values (#{stuid,jdbcType=BIGINT}, #{examtime,jdbcType=TIMESTAMP}, #{examid,jdbcType=BIGINT}, 
+      #{quesid,jdbcType=BIGINT}, #{answer,jdbcType=VARCHAR}, #{restotal,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.syk.exam.mbg.model.TbSturesult">
@@ -139,7 +139,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="stuid != null">
-        #{stuid,jdbcType=VARCHAR},
+        #{stuid,jdbcType=BIGINT},
       </if>
       <if test="examtime != null">
         #{examtime,jdbcType=TIMESTAMP},
@@ -148,7 +148,7 @@
         #{examid,jdbcType=BIGINT},
       </if>
       <if test="quesid != null">
-        #{quesid,jdbcType=VARCHAR},
+        #{quesid,jdbcType=BIGINT},
       </if>
       <if test="answer != null">
         #{answer,jdbcType=VARCHAR},
@@ -171,7 +171,7 @@
         id = #{record.id,jdbcType=BIGINT},
       </if>
       <if test="record.stuid != null">
-        stuid = #{record.stuid,jdbcType=VARCHAR},
+        stuid = #{record.stuid,jdbcType=BIGINT},
       </if>
       <if test="record.examtime != null">
         ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
@@ -180,7 +180,7 @@
         Examid = #{record.examid,jdbcType=BIGINT},
       </if>
       <if test="record.quesid != null">
-        quesid = #{record.quesid,jdbcType=VARCHAR},
+        quesid = #{record.quesid,jdbcType=BIGINT},
       </if>
       <if test="record.answer != null">
         answer = #{record.answer,jdbcType=VARCHAR},
@@ -196,10 +196,10 @@
   <update id="updateByExample" parameterType="map">
     update tb_sturesult
     set id = #{record.id,jdbcType=BIGINT},
-      stuid = #{record.stuid,jdbcType=VARCHAR},
+      stuid = #{record.stuid,jdbcType=BIGINT},
       ExamTime = #{record.examtime,jdbcType=TIMESTAMP},
       Examid = #{record.examid,jdbcType=BIGINT},
-      quesid = #{record.quesid,jdbcType=VARCHAR},
+      quesid = #{record.quesid,jdbcType=BIGINT},
       answer = #{record.answer,jdbcType=VARCHAR},
       resTotal = #{record.restotal,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -210,7 +210,7 @@
     update tb_sturesult
     <set>
       <if test="stuid != null">
-        stuid = #{stuid,jdbcType=VARCHAR},
+        stuid = #{stuid,jdbcType=BIGINT},
       </if>
       <if test="examtime != null">
         ExamTime = #{examtime,jdbcType=TIMESTAMP},
@@ -219,7 +219,7 @@
         Examid = #{examid,jdbcType=BIGINT},
       </if>
       <if test="quesid != null">
-        quesid = #{quesid,jdbcType=VARCHAR},
+        quesid = #{quesid,jdbcType=BIGINT},
       </if>
       <if test="answer != null">
         answer = #{answer,jdbcType=VARCHAR},
@@ -232,10 +232,10 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.syk.exam.mbg.model.TbSturesult">
     update tb_sturesult
-    set stuid = #{stuid,jdbcType=VARCHAR},
+    set stuid = #{stuid,jdbcType=BIGINT},
       ExamTime = #{examtime,jdbcType=TIMESTAMP},
       Examid = #{examid,jdbcType=BIGINT},
-      quesid = #{quesid,jdbcType=VARCHAR},
+      quesid = #{quesid,jdbcType=BIGINT},
       answer = #{answer,jdbcType=VARCHAR},
       resTotal = #{restotal,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}

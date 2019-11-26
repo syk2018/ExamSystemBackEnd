@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
     private TbStudentMapper studentMapper;
 
     @Override
-    public List<TbStudent> getUserByUsername(TbStudent student) {
+    public List<TbStudent> getUserByCardId(TbStudent student) {
         TbStudentExample studentExample = new TbStudentExample();
-        studentExample.createCriteria().andNameEqualTo(student.getName());
+        studentExample.createCriteria().andCardnoEqualTo(student.getCardno());
 
         return studentMapper.selectByExample(studentExample);
     }
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int createUser(TbStudent student) {
-        List<TbStudent> result = getUserByUsername(student);
+        List<TbStudent> result = getUserByCardId(student);
         if(result.isEmpty()) {
             student.setJointime(new Date());
             return studentMapper.insertSelective(student);

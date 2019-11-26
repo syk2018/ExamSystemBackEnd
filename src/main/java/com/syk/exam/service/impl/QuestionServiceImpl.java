@@ -40,6 +40,7 @@ public class QuestionServiceImpl implements QuestionService {
         TbExam exam = new TbExam();
 
         exam.setExamtime(new Date());
+        exam.setStuid(stuId);
 
         examMapper.insertSelective(exam);
 
